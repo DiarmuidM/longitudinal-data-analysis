@@ -10,7 +10,7 @@ The course programme can be viewed [here](https://github.com/DiarmuidM/longitudi
 
 ## Materials
 
-[**NOTE**: The notebooks will be available on 2020-09-10]
+[**NOTE**: The notebooks and reading list will be available on 2020-09-10]
 
 The training materials can be found in the following folders:
 * [notebooks](./notebooks) - Jupyter Notebooks containing software code, narrative and analytical outputs.
