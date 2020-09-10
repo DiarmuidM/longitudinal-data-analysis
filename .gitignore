@@ -1,8 +1,8 @@
 forms/
-data/citm_annacc_06-17_analysis.dta
+data/*.dta
 materials/
 meetings/
 reading-list/
-notebooks/
-notebooks/lda-data-prep-2020-08-28.do
+notebooks/*book-examples*
+notebooks/*.do
 .ipynb_checkpoints
