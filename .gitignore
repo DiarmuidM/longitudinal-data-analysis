@@ -2,7 +2,6 @@ forms/
 data/*.dta
 materials/
 meetings/
-reading-list/
 notebooks/*book-examples*
 notebooks/*.do
 .ipynb_checkpoints
