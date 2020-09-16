@@ -1,0 +1,8 @@
+# Book settings
+title: Longitudinal Data Analysis for Social Scientists
+author: Dr Diarmuid McDonnell
+logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex

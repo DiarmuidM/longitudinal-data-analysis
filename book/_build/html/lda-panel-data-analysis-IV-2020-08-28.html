@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Panel Data Analysis IV &#8212; Longitudinal Data Analysis for Social Scientists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Panel Data Analysis V" href="lda-panel-data-analysis-V-2020-08-28.html" />
+    <link rel="prev" title="Panel Data Analysis III" href="lda-panel-data-analysis-III-2020-08-28.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Longitudinal Data Analysis for Social Scientists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Longitudinal Data Analysis
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-refresher-2020-08-28.html">
+   Essential Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-what-is-longitudinal-data.html">
+   Introduction to Longitudinal Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-I-2020-08-28.html">
+   Panel Data Analysis I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-II-2020-08-28.html">
+   Panel Data Analysis II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-III-2020-08-28.html">
+   Panel Data Analysis III
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Panel Data Analysis IV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-V-2020-08-28.html">
+   Panel Data Analysis V
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-extensions-2020-08-28.html">
+   Extensions
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lda-panel-data-analysis-IV-2020-08-28.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lda-panel-data-analysis-IV-2020-08-28.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/lda-panel-data-analysis-IV-2020-08-28.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-reminder">
+   Quick reminder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-our-statistical-model">
+   Defining our statistical model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-word-of-caution">
+     A word of caution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-effects-model">
+   Random Effects Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conceptualising-the-random-effects-model">
+     Conceptualising the Random Effects model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#final-thoughts-on-conceptualisation">
+       Final thoughts on conceptualisation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimation">
+     Estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpretation">
+     Interpretation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-estimation">
+     Post-estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#benefits-of-random-effects">
+     Benefits of Random Effects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitations-of-random-effects">
+     Limitations of Random Effects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summarising-the-random-effects-model">
+     Summarising the Random Effects model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="panel-data-analysis-iv">
+<h1>Panel Data Analysis IV<a class="headerlink" href="#panel-data-analysis-iv" title="Permalink to this headline">¶</a></h1>
+<p>In this section we estimate a statistical model that leverages some of the main advantages of using panel data: <strong>Random Effects</strong>. We show some examples of how to estimate and interpret this model, and reflect on the conditions under which the model is appropriate.</p>
+<div class="section" id="quick-reminder">
+<h2>Quick reminder<a class="headerlink" href="#quick-reminder" title="Permalink to this headline">¶</a></h2>
+<p>Let’s briefly recap some essential concepts regarding panel data:</p>
+<p>Two sources of variation (<a class="reference external" href="https://www.stata.com/support/faqs/statistics/between-estimator/">Gould, n.d.</a>):</p>
+<ol class="simple">
+<li><p>Cross-section information on differences between units</p></li>
+<li><p>Time series information on differences over time within units</p></li>
+</ol>
+<p>Pooled OLS and Between Effects models only allow us to examine differences between units. Fixed Effects only allow us to examine differences within units.</p>
+<p>What if we wanted a model that leveraged aspects of the Between Effects and Fixed Effects estimators? Such a model would give us:</p>
+<ul class="simple">
+<li><p>More variation with which to explain the outcome.</p></li>
+<li><p>More flexibilty (e.g., include observed time-invariant explanatory variables).</p></li>
+<li><p>Other methodological and modelling benefits (e.g., decomposing explanatory variables into within and between effects).</p></li>
+</ul>
+</div>
+<div class="section" id="defining-our-statistical-model">
+<h2>Defining our statistical model<a class="headerlink" href="#defining-our-statistical-model" title="Permalink to this headline">¶</a></h2>
+<p>Recall the general form of Fixed Effects and Random Effects models:</p>
+<div class="math notranslate nohighlight">
+\[ \text{y}_{it} = \beta_0 + \beta_1x_{1it} + \mu_{i} + \text{e}_{it} \tag{1.8} \]</div>
+<p>In equation 1.8. we have introduced a <strong>unit-specific</strong> term to represent some of the residual variation in the outcome that is unexplained by the explanatory variables.</p>
+<p>This term (<span class="math notranslate nohighlight">\(\mu_{i}\)</span>) captures the effect of <em>residual heterogeneity</em> on the outcome i.e., unobserved or immeasurable characteristics of the units that are associated with the outcome (and possibly the explanatory variables), and vary across units.</p>
+<div class="section" id="a-word-of-caution">
+<h3>A word of caution<a class="headerlink" href="#a-word-of-caution" title="Permalink to this headline">¶</a></h3>
+<p>Note the lack of a time subscript <em>t</em> in the new term <span class="math notranslate nohighlight">\(\mu_{i}\)</span>. The implication is that the unobserved unit-specific effect is <strong>constant</strong> over time (i.e., within units).</p>
+<p>Therefore Fixed Effects and Random Effects models only control for omitted variables that do not change within units (e.g., race, sex at birth, natural ability).</p>
+</div>
+</div>
+<div class="section" id="random-effects-model">
+<h2>Random Effects Model<a class="headerlink" href="#random-effects-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conceptualising-the-random-effects-model">
+<h3>Conceptualising the Random Effects model<a class="headerlink" href="#conceptualising-the-random-effects-model" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>The Random Effects model focuses on how changes in explanatory variables are associated with changes in the outcome <strong>within and between units</strong>.</p></li>
+<li><p>It assumes the observed explanatory variables and unobserved unit-specific effects are <strong>not</strong> correlated. In essence: the unobserved unit-specific effect explains some of the variation in the outcome, but is not associated with any of the observed explanatory variables.</p></li>
+</ol>
+<p>Gayle and Lambert (2018, p. 68):</p>
+<blockquote>
+<div><p>…the random effects panel model is a matrix weighted average of the within-effects (fixed effects) and the between effects.</p>
+</div></blockquote>
+<p>In essence the Random Effects model borrows some information from the Between Effects model and some from the Fixed Effects model.</p>
+<p>Therefore the coefficients in a Random Effects model allow you to speak in terms of the effect of an explanatory variable on an outcome, whether we are comparing different individuals or different observations for the same individual - we’ll see what this means when we estimate our first Random Effects model.</p>
+<p>The Random Effects model is specified as follows:</p>
+<div class="math notranslate nohighlight">
+\[ \text{y}_{it} = \beta_0 + \beta_1x_{1it} +...+ \beta_kx_{kit} + \upsilon_{i} + \text{e}_{it} \tag{1.11} \]</div>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(\upsilon_{i}\)</span> represents the unit-specific effect on the outcome.</p>
+<p>As we assume the observed explanatory variables and unobserved unit-specific effects are <strong>not</strong> correlated, there is no need to estimate <span class="math notranslate nohighlight">\(\upsilon_{i}\)</span> as if it were an explanatory variable and hence why it is part of the error component of the model.</p>
+<p>Remember, it would only need to be estimated in the model if it would alter the coefficients for the observed explanatory variables: we assume it wouldn’t it. Therefore instead of estimating the value of <span class="math notranslate nohighlight">\(\upsilon_{i}\)</span> using the data (as we would for the observed explanatory variables), we assume the unit-specific effects are drawn from a known probability distribution (Gayle and Lambert, 2018).</p>
+<p>As a result, we are only interested in the variance of <span class="math notranslate nohighlight">\(\upsilon_{i}\)</span> and the extent to which it accounts for variation in the outcome.</p>
+<div class="section" id="final-thoughts-on-conceptualisation">
+<h4>Final thoughts on conceptualisation<a class="headerlink" href="#final-thoughts-on-conceptualisation" title="Permalink to this headline">¶</a></h4>
+<p>In a Random Effects model we are unconcerned with estimating the coefficient of the unit-specific effect. We simply want to know to what degree variation in these unit-specific effects is associated with variation in the outcome.</p>
+</div>
+</div>
+<div class="section" id="estimation">
+<h3>Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="s">&quot;../data/charity-panel-analysis-2020-09-10.dta&quot;</span>,<span class="k"> clear</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Contains annual accounts of charities in E&amp;W for financial years 2006-2017)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">xtreg</span> linc orgage localc west genchar nsources govern_share, re
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random-effects GLS regression                   Number of obs     =     23,826
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group variable: regno                           Number of groups  =      2,166
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R-sq:                                           Obs per group:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     within  = 0.0135                                         min =         11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     between = 0.0888                                         avg =       11.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     overall = 0.0832                                         max =         11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                Wald chi2(6)      =     507.12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>corr(u_i, X)   = 0 (assumed)                    Prob &gt; chi2       =     0.0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        linc |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------------+----------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      orgage |    .005022   .0003686    13.62   0.000     .0042995    .0057446
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      localc |  -.3323159   .0412995    -8.05   0.000    -.4132615   -.2513704
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        west |   .0797179   .0801801     0.99   0.320    -.0774323    .2368681
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     genchar |  -.2729578   .0414011    -6.59   0.000    -.3541025   -.1918131
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    nsources |    .030451     .00276    11.03   0.000     .0250415    .0358605
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>govern_share |    .001024    .000121     8.47   0.000      .000787    .0012611
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       _cons |   15.15988    .048456   312.86   0.000     15.06491    15.25485
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------------+----------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     sigma_u |  .90700183
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     sigma_e |   .2821005
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         rho |  .91179586   (fraction of variance due to u_i)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>QUESTION TIME</strong></p>
+<ol class="simple">
+<li><p>How much of the variation in the outcome is accounted for by the model? Is this a lot?</p></li>
+<li><p>Why are <code class="docutils literal notranslate"><span class="pre">localc</span></code>, <code class="docutils literal notranslate"><span class="pre">west</span></code> and <code class="docutils literal notranslate"><span class="pre">genchar</span></code> included in the estimation of the model (when they weren’t in the Fixed Effects model)?</p></li>
+<li><p>What does the <span class="math notranslate nohighlight">\(\text{rho}\)</span> statistic tell us?</p></li>
+<li><p>Is there evidence of correlation between the unit-specific effects and observed explanatory variables?</p></li>
+</ol>
+</div>
+<div class="section" id="interpretation">
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h3>
+<p>The effect of the observed explanatory variables is <strong>not</strong> net of the unit-specific effects. That is, we haven’t controlled away any correlation between <em>X</em> and <span class="math notranslate nohighlight">\(\mu_{i}\)</span> (because we assume they are not correlated).</p>
+<p><span class="math notranslate nohighlight">\(\text{_cons}\)</span> is the intercept.</p>
+<p><span class="math notranslate nohighlight">\(\text{orgage}\)</span> is the predicted change in the outcome for a one-unit increase in organisational age, <strong>whether age changes within or between units</strong>.</p>
+<p><span class="math notranslate nohighlight">\(\text{rho}\)</span> is the proportion of unexplained variance in the outcome explained by unobserved differences between charities (the unit-specific effects), rather than changes within them.</p>
+<p>If <span class="math notranslate nohighlight">\(\text{rho}\)</span> &gt; .5 then most of the residual variation in the outcome is due to differences between units, if <span class="math notranslate nohighlight">\(\text{rho}\)</span> &lt; .5 then most of the residual variation is accounted for by differences within units (i.e., the effects of the explanatory variables).</p>
+<p><span class="math notranslate nohighlight">\(\text{corr(u_i, X) = 0}\)</span> is the formal statement of the (untested) assumption that there is no correlation between the unit-specific effect and the observed explanatory variables in the model.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{sigma_u}\)</span> (or <span class="math notranslate nohighlight">\(\sigma_u\)</span>) is the standard deviation of the fixed effects (i.e., the residuals within units.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{sigma_e}\)</span> (or <span class="math notranslate nohighlight">\(\sigma_e\)</span>) is the standard deviation of residuals ei.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{R-sq: overall}\)</span> is the proportion of variance explained by the observed explanatory variables (i.e., excluding the unit-specific effect).</p></li>
+</ul>
+</div>
+<div class="section" id="post-estimation">
+<h3>Post-estimation<a class="headerlink" href="#post-estimation" title="Permalink to this headline">¶</a></h3>
+<p>Though it’s very rarely of substantive interest, we can recover the unit-specific effects (and other parameter estimates) after estimating a Random Effects model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">capture predict</span> random,<span class="k"> u</span>
+<span class="k">capture predict</span> y_hat, xb<span class="k"></span>
+<span class="k">capture predict</span> ei,<span class="k"> e</span>
+<span class="k">capture predict</span> residuals, ue<span class="k"></span>
+<span class="k">capture egen</span> pickone = tag(regno)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">l</span> regno fin_year random<span class="k"> if</span> pickone<span class="k"> in</span> <span class="m">1</span><span class="o">/</span><span class="m">100</span>, clean
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        regno   fin_year      random  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.   200048    2006-07   -1.144261  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12.   200051    2006-07    1.582299  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23.   200069    2006-07     -.21995  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34.   200222    2006-07    -.199622  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45.   200424    2006-07   -.1241415  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56.   200431    2006-07   -.2140733  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67.   200500    2006-07    .2228235  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78.   201081    2006-07    .2918403  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89.   201321    2006-07    -1.13723  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.   201911    2006-07   -.6447842  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">l</span> regno fin_year y_hat residuals random ei<span class="k"> in</span> <span class="m">1</span><span class="o">/</span><span class="m">11</span>, clean
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        regno   fin_year      y_hat   residuals      random          ei  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1.   200048    2006-07   15.34991   -1.348024   -1.144261   -.2037623  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2.   200048    2007-08   15.35493   -1.177057   -1.144261   -.0327961  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3.   200048    2008-09   15.39064   -1.205535   -1.144261   -.0612741  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4.   200048    2009-10   15.36498   -1.132381   -1.144261    .0118806  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5.   200048    2010-11    15.3716   -1.200694   -1.144261   -.0564324  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6.   200048    2011-12   15.37502    -1.22701   -1.144261   -.0827486  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7.   200048    2012-13   15.41329   -1.037294   -1.144261    .1069672  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8.   200048    2013-14   15.38507   -1.085107   -1.144261    .0591543  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9.   200048    2014-15   15.42087   -1.160563   -1.144261   -.0163015  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10.   200048    2015-16   15.39511    -1.09398   -1.144261    .0502813  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11.   200048    2016-17   15.40013   -1.029922   -1.144261    .1143396  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">di</span> <span class="o">-</span><span class="m">1.144261</span> <span class="o">+</span> <span class="o">-</span>.<span class="m">2037623</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.3480233
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">tabstat</span> random ei,<span class="k"> s</span>(mean sd)<span class="k"> format</span>(<span class="nx">%5.4f</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   stats |    random        ei
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------+--------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    mean |    0.0000    0.0000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      sd |    0.9096    0.2691
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="benefits-of-random-effects">
+<h3>Benefits of Random Effects<a class="headerlink" href="#benefits-of-random-effects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Analyse both change over time and differences between units.</p></li>
+<li><p>Control for residual heterogeneity.</p></li>
+<li><p>Estimate observed time-invariant explanatory variables in the model.</p></li>
+<li><p>Coefficient estimates are <strong>efficient</strong>, especially when compared to those from a Fixed Effects model. As a result, standard errors tend to be smaller. Put simply, the estimates of the coefficients are based on more information than those in the Fixed Effects model, which bases its estimates on only one source of variation (within).</p></li>
+</ul>
+</div>
+<div class="section" id="limitations-of-random-effects">
+<h3>Limitations of Random Effects<a class="headerlink" href="#limitations-of-random-effects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Key assumption is often unrealistic.</p></li>
+<li><p>Coefficient estimates are <strong>inconsistent</strong> if the key assumption is violated.</p></li>
+<li><p>That is, if the coefficients for the observed explanatory variables are biased, then increasing the sample size does not necessarily mean we are getting closer to the true value of the parameter.
+Difficult to infer whether the value of a coefficient is mainly determined by within or between variation (though there are solutions to this problem).</p></li>
+<li><p>Cannot control for unobserved residual heterogeneity that varies over time e.g., educational ability? Natural resilience?</p></li>
+</ul>
+<p>The last point is worth expanding on: if units differ in an unobserved way that varies over time, this will not be controlled for in the Random Effects model.</p>
+</div>
+<div class="section" id="summarising-the-random-effects-model">
+<h3>Summarising the Random Effects model<a class="headerlink" href="#summarising-the-random-effects-model" title="Permalink to this headline">¶</a></h3>
+<p>Analyses both change within a unit’s outcomes, and differences between units’ outcomes.</p>
+<p>Can control for the effect of unobserved time-invariant explanatory variables (residual heterogeneity).</p>
+<p>Can include observed explanatory variables that do not vary within units (e.g., race, sex at birth).</p>
+<p>Does not provide robust estimates of observed explanatory variables when said variables are correlated with unobserved unit-specific effects.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Both the Pooled OLS and Between Effects models provide useful information on the association between an outcome <em>Y</em> and a set of explanatory variables <em>X</em>.</p>
+<p>Fixed Effects provide potentially different information on the association between an outcome <em>Y</em> and a set of explanatory variables *X.</p>
+<p>Random Effects combines the <em>within</em> and <em>between</em> perspectives - methodological and substantive benefits.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "stata"
+        },
+        kernelOptions: {
+            kernelName: "stata",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'stata'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="lda-panel-data-analysis-III-2020-08-28.html" title="previous page">Panel Data Analysis III</a>
+    <a class='right-next' id="next-link" href="lda-panel-data-analysis-V-2020-08-28.html" title="next page">Panel Data Analysis V</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dr Diarmuid McDonnell<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

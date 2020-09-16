@@ -1,0 +1,1067 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction to Longitudinal Data &#8212; Longitudinal Data Analysis for Social Scientists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Panel Data Analysis I" href="lda-panel-data-analysis-I-2020-08-28.html" />
+    <link rel="prev" title="Essential Concepts" href="lda-refresher-2020-08-28.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Longitudinal Data Analysis for Social Scientists</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Longitudinal Data Analysis
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-refresher-2020-08-28.html">
+   Essential Concepts
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to Longitudinal Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-I-2020-08-28.html">
+   Panel Data Analysis I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-II-2020-08-28.html">
+   Panel Data Analysis II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-III-2020-08-28.html">
+   Panel Data Analysis III
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-IV-2020-08-28.html">
+   Panel Data Analysis IV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-panel-data-analysis-V-2020-08-28.html">
+   Panel Data Analysis V
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lda-extensions-2020-08-28.html">
+   Extensions
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lda-what-is-longitudinal-data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lda-what-is-longitudinal-data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/lda-what-is-longitudinal-data.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-longitudinal-data">
+   What are longitudinal data?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-of-longitudinal-study-designs">
+     Types of longitudinal study designs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-use-longitudinal-data">
+   Why use longitudinal data?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#research-questions">
+     Research questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodological-benefits">
+     Methodological benefits
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-note-of-caution">
+     A note of caution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-summary">
+     In summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-does-longitudinal-data-look-like">
+   What does longitudinal data look like?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#charity-data">
+     Charity data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-longitudinal-data">
+<h1>Introduction to Longitudinal Data<a class="headerlink" href="#introduction-to-longitudinal-data" title="Permalink to this headline">¶</a></h1>
+<p>This section draws heavily on the work of Professor Vernon Gayle: <a class="reference external" href="https://github.com/vernongayle/aqmen_longitudinal">Longitudinal Data Analysis for Social Scientists</a></p>
+<div class="section" id="what-are-longitudinal-data">
+<h2>What are longitudinal data?<a class="headerlink" href="#what-are-longitudinal-data" title="Permalink to this headline">¶</a></h2>
+<p>At its simplest, longitudinal data contain a temporal dimension. This may be as simple as the data set containing variables that define the beginning and end of a social process (e.g., how long did somebody remain unemployed?). More often when we speak of longitudinal data we refer to data sets containing multiple observations of the same individuals.</p>
+<div class="section" id="types-of-longitudinal-study-designs">
+<h3>Types of longitudinal study designs<a class="headerlink" href="#types-of-longitudinal-study-designs" title="Permalink to this headline">¶</a></h3>
+<p><strong>Repeated cross-sectional studies</strong> - repeat samples of the same population over time:</p>
+<ul class="simple">
+<li><p>National Surveys of Sexual Attitudes and Lifestyles (NATSAL)</p></li>
+<li><p>British Social Attitudes Survey</p></li>
+</ul>
+<p>Repeated cross-sectional studies allow analysis of change over time at the aggregate / macro level. For example, the mean number of opposite-sex sexual partners has increased over time in the UK for both men and women:</p>
+<p><em>Figure 1.1.</em></p>
+<p><img alt="NATSAL Sexual Partners" src="_images/natsal-change-in-partners.jpg" /></p>
+<p>Credit: Wellcome Trust/Paulo Estriga</p>
+<p><strong>Panel study</strong> - groups of entities are repeatedly studied over time:</p>
+<ul class="simple">
+<li><p>UK Household Longitudinal Study (UKHLS)</p></li>
+<li><p>Panel Study of Income Dynamics (PSID)</p></li>
+<li><p>English Longitudinal Study of Aging (ELSA)</p></li>
+</ul>
+<p>Panel studies collect data on the <strong>same respondents</strong> over time, and thus are known as <em>repeated contacts</em> data. For example, PSID has a module examining charitable giving of US households since 2000; this information is collected biennially and allows us to understand how the same households alter their giving behaviour over time (see figure 3.2 below).</p>
+<p><em>Figure 1.2</em></p>
+<p><img alt="PSID Charitable Giving" src="_images/psid-charitable-giving.png" /></p>
+<p>Credit: <a class="reference external" href="http://hdl.handle.net/1805/21217">Changes to the Giving Landscape</a></p>
+<p><strong>Cohort study</strong> - following a particular group of entities over time:</p>
+<ul class="simple">
+<li><p>Millennium Cohort Study</p></li>
+<li><p>Growing Up in Scotland</p></li>
+<li><p>Whitehall Study II</p></li>
+</ul>
+<p>The Millennium Cohort Study is a multi-wave survey of almost 20,000 children born in the UK during 2000/01, and is a representative sample of all children born during this period (Rafferty et al., 2015). It collects data at different periods (waves) of the children’s lives, thus providing longitudinal information on the development and life histories of these children.</p>
+<p><em>Figure 1.3.</em></p>
+<p><img alt="MCS " src="_images/mcs-weight-transitions.png" /></p>
+<p>Credit: <a class="reference external" href="https://cls.ucl.ac.uk/wp-content/uploads/2017/12/MCS6-Briefing-02-Overweight-and-obesity.pdf">Child overweight and obesity: Initial findings from the Millennium Cohort Study Age 14 Survey</a></p>
+</div>
+</div>
+<div class="section" id="why-use-longitudinal-data">
+<h2>Why use longitudinal data?<a class="headerlink" href="#why-use-longitudinal-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>UK has an unparalleled collection of longitudinal data resources.</p></li>
+<li><p>These resources are critical for analysing social change (and social stability).</p></li>
+<li><p>However they are costly to collect, clean and share, therefore strong justification needed.</p></li>
+</ul>
+<div class="section" id="research-questions">
+<h3>Research questions<a class="headerlink" href="#research-questions" title="Permalink to this headline">¶</a></h3>
+<p>For many social science research projects cross-sectional data will be sufficient.</p>
+<p>For example, if we are interested in understanding regional inequalities, it is sufficient to take a cross-section of data for these regions (e.g., a single census year) and describe variation in some measure of inequality. One of my recent research projects examined the distribution of charities across local authorities in England and Wales:</p>
+<p><em>Figure 1.4.</em></p>
+<p><img alt="Charity Density Map" src="_images/charity-density-map.png" /></p>
+<p>The map displays the mean number of charities per 5000 residents across 326 local authorities in England and Wales. In essence I combined five census years to produce a cross-section of charity density between 1971 and 2011; that is I ignored the longitudinal component of my data and focused instead on making comparisons <em>between</em> local authorities.</p>
+<p>Most social research projects can be improved by the analysis of longitudinal data.</p>
+<p><em>Figure 1.5.</em></p>
+<p><img alt="Charity Density and Deprivation" src="_images/charity-density-deprivation.png" /></p>
+<p>Figure 3.5 presents the temporal variation in the association between charity density and the level of deprivation in a local authority. Not only can we make comparisons between local authorities in a given year, we can now examine change <em>over time</em>, adding much more detail to our understanding of the relationship between density and deprivation.</p>
+<p>Some research questions require longitudinal data.</p>
+<p><em>Figure 1.6.</em></p>
+<p><img alt="Charity Density Change Score Model" src="_images/charity-density-changes.png" /></p>
+<p>Figure 3.3 displays the results of a change score model that links changes in the values of a set of explanatory variables to changes in the values of the outcome. For example, a local authority becoming more deprived between census years is associated with a small increase in charity density. Such an analysis is not possible if we did not have data on the same local authorities at multiple time periods.</p>
+<p>Research questions that require longitudinal data:</p>
+<ul class="simple">
+<li><p>Flows into and out of poverty.</p></li>
+<li><p>The effects of family migration on the woman’s subsequent employment activities.</p></li>
+<li><p>The impact of Covid-19 on long-term health outcomes of individuals.</p></li>
+<li><p>Evaluating policy, health, educational interventions.</p></li>
+</ul>
+</div>
+<div class="section" id="methodological-benefits">
+<h3>Methodological benefits<a class="headerlink" href="#methodological-benefits" title="Permalink to this headline">¶</a></h3>
+<p><strong>Micro-level social processes</strong></p>
+<p>Repeated cross-sectional data can reveal macro-level trends and patterns of substantive interest but mask micro-level change. For example, repeated cross-sectional analysis of the British Household Panel Survey (precursor to Understanding Society) showed that poverty rates stabilised in the 1990s. However longitudinal analysis uncovered substantial turnover / churn in terms of which individuals remained in or exited poverty (the poor are not always poor!).</p>
+<p>In my own research area, cross-sectional analysis of the Scottish Household Survey reveals the proportion of individuals volunteering has remained stable between 2007-2017 (Volunteer Scotland, 2019). However this pattern masks the substantial micro-level variation in volunteering behaviour: that is, it is not the same individuals volunteering every year, with people dipping in and out of this activity throughout the lifecourse.</p>
+<p><strong>Temporal ordering of events</strong></p>
+<p>Longitudinal data give us a better sense of the timing of events and hence the direction of influence. Remember that a necessary (but insufficient) condition for causal analysis is the appropriate temporal ordering of the cause and effect: <em>X</em> cannot cause <em>Y</em> if it does not occur before <em>Y</em>.</p>
+<p>Understanding — and having the ability to identify — the temporal ordering of events helps to address a pervading issue in quantitative social science analysis: <em>simultaneity bias</em>. For example, it is difficult to untangle whether poor health causes unemployment, unemployment causes poor health (or both) without some form of longitudinal data.</p>
+<p><strong>Improving control for residual heterogeneity</strong></p>
+<p>Now we arrive at one of the major methodological appeals of longitudinal data: the ability to control for <em>residual heterogeneity</em>. As Gayle (2018) concisely states:</p>
+<blockquote>
+<div><p>The possibility of substantial variation between similar individuals due to unmeasured, and possibly immeasurable, variables is known as ‘residual heterogeneity’.</p>
+</div></blockquote>
+<p>You may have heard residual heterogeneity referred to as <em>omitted variable bias</em> or <em>unobserved hetereogeneity</em>. We’ll spend much more time on this benefit in the next section.</p>
+<p><strong>Improving control for state dependence</strong></p>
+<p>Longitudinal data provide important information on the initial or current state an entity is in, and the trajectory of said entity across different or the same states over time. As Nobel Prize winner J.J. Heckman summarises:</p>
+<blockquote>
+<div><p>A frequently notes empirical regularity in the analysis of employment data is that those who were unemployed in the past or have worked in the past are more likely to be unemployed (or working) in the future.</p>
+</div></blockquote>
+<p>In essence, much of human behaviour is influenced by previous behaviour and outcomes. Think back to the example we showed from the Millennium Cohort Study: both boys and girls were most likely to remain at the same weight (whether normal or excess) at age 14 as they were at age 11.</p>
+</div>
+<div class="section" id="a-note-of-caution">
+<h3>A note of caution<a class="headerlink" href="#a-note-of-caution" title="Permalink to this headline">¶</a></h3>
+<p>Longitudinal data are not a panacea:</p>
+<ul class="simple">
+<li><p>For missing data</p></li>
+<li><p>For measurement error</p></li>
+<li><p>For lack of sample representativeness</p></li>
+<li><p>For poorly specified statistical models</p></li>
+<li><p>Etc</p></li>
+</ul>
+<p>See the excellent summaries of the strengths and weaknesses of longitudinal data produced by <a class="reference external" href="https://learning.closer.ac.uk/introduction/what-can-longitudinal-studies-show-us/strengths-of-longitudinal-studies/">CLOSER</a>.</p>
+</div>
+<div class="section" id="in-summary">
+<h3>In summary<a class="headerlink" href="#in-summary" title="Permalink to this headline">¶</a></h3>
+<p>Longitudinal data enhance our ability to investigate complicated processes in the social world!</p>
+</div>
+</div>
+<div class="section" id="what-does-longitudinal-data-look-like">
+<h2>What does longitudinal data look like?<a class="headerlink" href="#what-does-longitudinal-data-look-like" title="Permalink to this headline">¶</a></h2>
+<p>Let’s get our hands dirty working with some real-world longitudinal data: strictly speaking I’ll get my hands dirty as the data set we’re using has some restrictions on sharing. We will explore a data set containing a representative sample of UK charities: a version of this data set is available through the UK Data Service: <a class="reference external" href="http://doi.org/10.5255/UKDA-SN-853257">SN 853257</a></p>
+<p>First, let’s start with a simple, fabricated example of a longitudinal data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>import delimited using <span class="s">&quot;../data/lda-simple-example-2020-08-28.csv&quot;</span>,<span class="k"> clear</span> varn(<span class="m">1</span>)<span class="k"></span>
+<span class="k">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5 vars, 20 obs)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     +--------------------------------------+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |   pid   year      sex   age   income |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1. | 10001   2015     male    22    20000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2. | 10001   2016     male    23    20000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3. | 10001   2017     male    24    22000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4. | 10001   2018     male    25    24000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5. | 10002   2015   female    45    29000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6. | 10002   2016   female    46    29000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7. | 10002   2017   female    47    29000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8. | 10002   2018   female    48    29500 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9. | 10003   2015   female    31    41500 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10. | 10003   2016   female    32    42400 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11. | 10003   2017   female    33    43800 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12. | 10003   2018   female    34    45000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13. | 10004   2015     male    65    25000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14. | 10004   2016     male    66    10000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15. | 10004   2017     male    67    10000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16. | 10004   2018     male    68    10000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17. | 10005   2015   female    18    14000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18. | 10005   2016   female    19    15000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19. | 10005   2017   female    20    15000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20. | 10005   2018   female    21    18000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     +--------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have five individuals (<em>units</em>) observed across four years (<em>time periods</em>), with three variables capturing attributes in each year (<code class="docutils literal notranslate"><span class="pre">sex</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, <code class="docutils literal notranslate"><span class="pre">income</span></code>).</p>
+<p>This is an example of a <strong>balanced panel</strong>: the same number of observations is captured for each unit.</p>
+<p>Now let’s look at a different example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>import delimited using <span class="s">&quot;../data/lda-simple-example-ub-2020-08-28.csv&quot;</span>,<span class="k"> clear</span> varn(<span class="m">1</span>)<span class="k"></span>
+<span class="k">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5 vars, 16 obs)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     +--------------------------------------+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |   pid   year      sex   age   income |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1. | 10001   2015     male    22    20000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2. | 10001   2016     male    23    20000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3. | 10001   2017     male    24    22000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4. | 10001   2018     male    25    24000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5. | 10002   2015   female    45    29000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6. | 10002   2016   female    46    29000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7. | 10003   2015   female    31    41500 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8. | 10003   2016   female    32    42400 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9. | 10003   2017   female    33    43800 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10. | 10004   2015     male    65    25000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11. | 10004   2016     male    66    10000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12. | 10004   2017     male    67    10000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13. | 10004   2018     male    68    10000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14. | 10005   2015   female    18    14000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15. | 10005   2016   female    19    15000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |--------------------------------------|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16. | 10005   2017   female    20    15000 |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     +--------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have the same units and time span but this time there are gaps within units: individual <code class="docutils literal notranslate"><span class="pre">10002</span></code> is only observed twice, and <code class="docutils literal notranslate"><span class="pre">10003</span></code> and <code class="docutils literal notranslate"><span class="pre">10005</span></code> three times.</p>
+<p>This is an example of an <strong>unbalanced panel</strong>: the same number of observations is not captured for each unit.</p>
+<p>Working with a balanced panel is preferrable for a number of reasons, which we’ll explore in due course. However the methods of analysis we will cover apply to unbalanced panels also (Mehmetoglu &amp; Jakobsen, 2016).</p>
+<p>The classic panel consists of a large number of units of analysis (<em>i</em>) observed over a small number of periods (<em>t</em>).</p>
+<div class="section" id="charity-data">
+<h3>Charity data<a class="headerlink" href="#charity-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="s">&quot;../data/charity-panel-2020-09-10.dta&quot;</span>,<span class="k"> clear</span>
+<span class="k">desc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Contains annual accounts of charities in E&amp;W for financial years 2006-2017)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Contains data from ../data/charity-panel-2020-09-10.dta
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  obs:        68,818                          Contains annual accounts of
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                charities in E&amp;W for financial
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                years 2006-2017
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> vars:            31                          9 Sep 2020 08:41
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> size:     8,326,978                          (_dta has notes)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              storage   display    value
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>variable name   type    format     label      variable label
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>regno           long    %12.0g                Charity number (unique id)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fin_year        byte    %8.0g      fin_year   Financial year
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>etotal          double  %12.0g                Total expenditure
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>itotal          double  %12.0g                Total income
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aob_classified  str19   %19s                  Geographical scale of activity
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                i.e. local, national
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sampling_strata byte    %12.0g     sampling_strata_lab
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                              Income categories used to sample
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                organisations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>large_samplin~a byte    %12.0g     large_sampling_strata_lab
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                              Income categories used to sample
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                large organisations (£500k+)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orgsize         byte    %12.0g     orgsize_lab
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                              Size of charity - in categories of
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                total annual gross income
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orgsize_large   byte    %12.0g     orgsize_large_lab
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                              Organisation size by income bands,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                for large charities (&gt; £500k)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orgsize_alt     byte    %13.0g     orgsize_alt_lab
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                              Organisation size by income bands,
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                alternative banding
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fundraised      float   %9.0g                 Income derived from donations from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                individuals
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ind_fees        float   %9.0g                 Income derived from fees for
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                charitable activities from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                individuals
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>govern          float   %9.0g                 Income derived from government
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                grants or contracts
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>volsector       float   %9.0g                 Income derived from voluntary
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                sector grants or contracts
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>internal        float   %9.0g                 Income derived from investments
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                and trading subsidiaries
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>business_other  float   %9.0g                 Income derived from other sources
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                e.g. business sector
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fundraised_sh~e float   %9.0g                 Share of income derived from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                donations from individuals
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>business_othe~e float   %9.0g                 Share of income derived from other
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                sources e.g. business sector
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>internal_share  float   %9.0g                 Share of income derived from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                investments and trading
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                subsidiaries
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>volsector_share float   %9.0g                 Share of income derived from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                voluntary sector grants or
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                contracts
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>govern_share    float   %9.0g                 Share of income derived from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                government grants or contracts
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ind_fees_share  float   %9.0g                 Share of income derived from fees
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                for charitable activities from
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                individuals
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nsources        byte    %9.0g                 Number of income sources where
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                income &gt;= £1,000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inc_diverse     float   %9.0g                 Index of revenue diversification:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                0 (less diversified) to 1 (more
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                diversified)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>maxyear         byte    %9.0g                 Most recent year charity appears
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                in the dataset
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orgage          int     %9.0g                 Age of charity - in years
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>linc            float   %9.0g                 Total income (log)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>genchar         float   %9.0g                 General charity
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>socser          float   %9.0g                 Social service charity
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>west            float   %9.0g                 Charity registered in Westminster
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>localc          float   %9.0g                 Local charity
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sorted by: regno
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s perform a couple of quick tasks in order to get familiar with the data.</p>
+<p>First, we need to tell Stata we are dealing with panel data, as this allows us to access some time-series operators that are useful:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">xtset</span> regno fin_year
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       panel variable:  regno (unbalanced)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        time variable:  fin_year, 1 to 11, but with gaps
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                delta:  1 unit
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">xtset</span></code> command takes two arguments: a variable representing the unique identifier of the panel units (<code class="docutils literal notranslate"><span class="pre">regno</span></code>) and a variable capturing the unique identifier for the time period (<code class="docutils literal notranslate"><span class="pre">fin_year</span></code>). This combination of variables must uniquely identify every observation (row) in the data: we can check whether this is the case using the <code class="docutils literal notranslate"><span class="pre">isid</span></code> command - if no error message is returned, then those variables uniquely identify an every observation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">isid</span> regno fin_year
+</pre></div>
+</div>
+</div>
+</div>
+<p>Second, we can use <code class="docutils literal notranslate"><span class="pre">xtdescribe</span></code> to learn more about the patterns of observations in our panel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>xtdescribe
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   regno:  200048, 200051, ..., 1166968                      n =      11193
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fin_year:  1, 2, ..., 11                                     T =         11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Delta(fin_year) = 1 unit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Span(fin_year)  = 11 periods
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           (regno*fin_year uniquely identifies each observation)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribution of T_i:   min      5%     25%       50%       75%     95%     max
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         1       1       3         6        10      11      11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Freq.  Percent    Cum. |  Pattern
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ---------------------------+-------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     2166     19.35   19.35 |  11111111111
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      476      4.25   23.60 |  ..111111111
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      434      3.88   27.48 |  ....1.1.1.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      388      3.47   30.95 |  ........1.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      381      3.40   34.35 |  ......1.1.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      247      2.21   36.56 |  ....1......
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      212      1.89   38.45 |  .......1.1.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      211      1.89   40.34 |  ......1....
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      181      1.62   41.95 |  1111.......
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     6497     58.05  100.00 | (other patterns)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ---------------------------+-------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    11193    100.00         |  XXXXXXXXXXX
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s unpack these results:</p>
+<ul class="simple">
+<li><p>There are 11,193 panel units (<em>n</em>) and 11 time periods (<em>T</em>).</p></li>
+<li><p>The time period variable (<em>fin_year</em>) changes by 1 unit (<em>Delta(fin_year)</em>).</p></li>
+<li><p>50% of panel units are observed at least 6 times (<em>Distribution of T_i</em>).</p></li>
+<li><p>2,166 panel units are observed in every time period, 181 are observed only in the first 4 periods etc (see frequency table).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">by</span> regno:<span class="k"> gen</span> numobs = _N<span class="k"></span>
+<span class="k">xttab</span> numobs
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                  Overall             Between            Within
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   numobs |    Freq.  Percent      Freq.  Percent        Percent
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------+-----------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1 |    1318      1.92      1318     11.78         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2 |    2838      4.12      1419     12.68         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        3 |    3069      4.46      1023      9.14         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4 |    3812      5.54       953      8.51         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5 |    2895      4.21       579      5.17         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6 |    3624      5.27       604      5.40         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        7 |    4081      5.93       583      5.21         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        8 |    4552      6.61       569      5.08         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        9 |    8883     12.91       987      8.82         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10 |    9920     14.41       992      8.86         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       11 |   23826     34.62      2166     19.35         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------+-----------------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Total |   68818    100.00     11193    100.00         100.00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             (n = 11193)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have a better sense of the number of times we observe our panel units in the data. Let’s also create a variable that identifies charities that appear in every year in the data, and drop all charities that do not meet this criterion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">gen</span> balpan = (numobs<span class="o">==</span><span class="m">11</span>)<span class="k"></span>
+<span class="k">keep if</span> balpan
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(44,992 observations deleted)
+</pre></div>
+</div>
+</div>
+</div>
+<p>That will do for now, we’ll examine the variables when we start estimating statistical models in the next section. We’ll save the changes to the data set:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">sav</span> <span class="s">&quot;../data/charity-panel-analysis-2020-09-10.dta&quot;</span>,<span class="k"> replace</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file ../data/charity-panel-analysis-2020-09-10.dta saved
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Longitudinal data offer a number of substantive and methodological benefits.</p>
+<p>There a number of study designs, each with strengths and weaknesses.</p>
+<p>Longitudinal data are not a panacea.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "stata"
+        },
+        kernelOptions: {
+            kernelName: "stata",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'stata'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="lda-refresher-2020-08-28.html" title="previous page">Essential Concepts</a>
+    <a class='right-next' id="next-link" href="lda-panel-data-analysis-I-2020-08-28.html" title="next page">Panel Data Analysis I</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dr Diarmuid McDonnell<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

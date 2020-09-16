@@ -22,4 +22,4 @@ We are grateful to the Bristol Doctoral College for supporting this training thr
 
 ## Further information
 
-Please do not hesitate to get in contact if you have queries, criticisms and ideas regarding this materials: [Dr Diarmuid McDonnell](mailto:diarmuid.mcdonnell@manchester.ac.uk)
+Please do not hesitate to get in contact if you have queries, criticisms and ideas regarding these materials: [Dr Diarmuid McDonnell](mailto:diarmuid.mcdonnell@manchester.ac.uk)
