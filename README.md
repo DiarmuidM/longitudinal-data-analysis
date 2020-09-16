@@ -8,6 +8,10 @@ This repository houses the materials underpinning a one-day course on Longitudin
 
 The course programme can be viewed [here](https://github.com/DiarmuidM/longitudinal-data-analysis/tree/master/outlines).
 
+## Book
+
+The main content of the course can be viewed as an online book: https://diarmuidm.github.io/longitudinal-data-analysis-book
+
 ## Materials
 
 The training materials can be found in the following folders:
