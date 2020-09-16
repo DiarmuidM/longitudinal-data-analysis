@@ -16,6 +16,7 @@ The main content of the course can be viewed as an online book: https://diarmuid
 
 The training materials can be found in the following folders:
 * [notebooks](./notebooks) - Jupyter Notebooks containing software code, narrative and analytical outputs.
+* [syntax](./syntax) - Stata and R syntax files for estimating and comparing panel data models.
 * [outlines](./outlines) - view the course outline and programme.
 * [reading-list](./reading-list) - explore further resources including articles, books, online resources and more.
 * [data](./data) - sample data sets drawn upon in the notebooks.
