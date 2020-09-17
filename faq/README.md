@@ -10,7 +10,7 @@ The terms are often used interchangeably (Fixed Effects Model / Estimator) but t
 * An *estimator* is the rule / algorithm / calculation that produces the estimates (coefficients) of the parameters in a model. For example, Ordinary Least Squares (OLS) is the standard estimator behind the linear regression model.
 
 ### Q. How do I arrange my data for longitudinal data analysis?
-Typically you would arrange your data in **long format**: multiple rows per unit of analysis, with each row uniquely identified by a combination of `uniqueid` and `time`:
+Typically you would arrange your data in **long format**: multiple rows per unit of analysis, with each row uniquely identified by a combination of `unit_id` and `time`:
 
 | Name       | Year | Income |
 |------------|------|--------|
