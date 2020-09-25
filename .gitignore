@@ -6,3 +6,5 @@ meetings/
 notebooks/*book-examples*
 notebooks/*.do
 .ipynb_checkpoints
+reading-list/Bell2019_Article_FixedAndRandomEffectsModelsMak.pdf
+reading-list/explaining_fixed_effects_random_effects_modeling_of_timeseries_crosssectional_and_panel_data.pdf
